@@ -1,0 +1,37 @@
+package studentRestservice;
+import javax.xml.bind.annotation.xmlAccessType;
+import javax.xml.bind.annotation.xmlAccessorType;
+import javax.xml.bind.annotation.xmlRootType;
+
+
+
+@xmlAccessorType(xmlAccessType.None)
+@xmlRootElement(name="student")
+public class Student {
+	public int studId;
+	public String studename;
+public String studEmail;
+@xmlElement(required="true")
+public int getStudId() {
+	return studId;
+}
+public void setStudId(int studId) {
+	this.studId = studId;
+}
+@xmlElement(required="true")
+public String getStudename() {
+	return studename;
+}
+public void setStudename(String studename) {
+	this.studename = studename;
+}
+@xmlElement(required="true")
+public String getStudEmail() {
+	return studEmail;
+}
+public void setStudEmail(String studEmail) {
+	this.studEmail = studEmail;
+}
+
+
+}

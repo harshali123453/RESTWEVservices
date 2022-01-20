@@ -1,0 +1,45 @@
+package studentRestservice.com;
+import javax.ws.rs.GET;
+import javax.ws.rs.path;
+import javax.ws.rs.pathpars;
+import javax.ws.rs.produces;
+import javax.ws.rs.core.MediaType;
+
+import studentRestservice.Student;
+@path("/stude")
+public class Studentservices {
+@GET
+@path("/get/{studId}")
+@produces(MediType.APPLICATION_XML)
+public Student getstudent(@pathparam("studId")String empId)
+{
+Student student=new com.rest.student.model.Student();
+student.setStudId(111);
+student.setStudename("harshali");
+student.setStudEmail("landeharshali@gmail.com");
+return student;
+}
+@POST
+@path("/create")
+@consumes(MediaType.APPLICATION_XML)
+@produces(MediaType.APPLICATION_XML)
+public Student createstudent(Student student)
+{
+	return student;
+}
+@PUT
+@path("/update")
+@consumes(MediaType.APPLICATION_XML)
+@produce(MediaType.APPLICATION_XML)
+public Student updatestudent (Student student)
+{
+	student.setStudename(student.getStudename());
+	return student;
+}
+@DELETE
+@path("/delete/{studId}")
+public Response deleteStudent(@pathpara "studId") int studId) throws URLSyntaxException
+{
+	return Response.status(200).entity("student with"+studId+ is deleted successfully).build();
+}
+}
